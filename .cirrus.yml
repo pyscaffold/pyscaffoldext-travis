@@ -4,7 +4,7 @@ auto_cancellation: false
 env:
   PATH: ${HOME}/.local/bin:${PATH}
   # ^  add user paths
-  COVERALLS_REPO_TOKEN: ENCRYPTED[7ada9fe1105610d2b5ac314f5eb4cc2fea3d42a5fa1e1bfa263000277146022b71b80f7d2f00dc6058e08bd1c9034be7]
+  COVERALLS_REPO_TOKEN: ENCRYPTED[8f30d426962c7c09f1df4e7765a1c84b2aa2b68e703174ca50fac864735389c52ed3df5f107234964a9368048d8beb35]
   PIP_CACHE: ${HOME}/.cache/pip
   PRE_COMMIT_HOME: ${HOME}/.cache/pre-commit
   LC_ALL: C.UTF-8
@@ -30,7 +30,7 @@ env:
   build_script: &build
     - python -m tox -e build  # Ensure PEP517-style build works
   test_script: &test
-    - python -m tox -e all -- -n 5 -rfEx --durations 10 --color yes --junit-xml junit-test.xml
+    - python -m tox -- -n 5 -rfEx --durations 10 --color yes --junit-xml junit-test.xml
     # ^  tox is better if invoked as a module on Windows/OSX
   always: &upload-junit
     upload_junit_artifacts:
@@ -54,7 +54,8 @@ typecheck_task:
   clean_workspace_script:
     - rm -rf junit-*.xml
   typecheck_script:
-    - python -m mypy src --junit-xml junit-type.xml
+    - python -m mypy src/pyscaffoldext --junit-xml junit-type.xml
+      # ^  mypy support for PEP 420 is a bit flaky
   always: *upload-junit
 
 
@@ -124,12 +125,12 @@ windows_task:
     # Use custom cloning since otherwise git tags are missing
     CMD.exe /C ECHO ON &
     IF NOT DEFINED CIRRUS_PR (
-    git clone --recursive --branch=%CIRRUS_BRANCH% https://x-access-token:%CIRRUS_REPO_CLONE_TOKEN%@github.com/%CIRRUS_REPO_FULL_NAME%.git %CIRRUS_WORKING_DIR% &
-    git reset --hard %CIRRUS_CHANGE_IN_REPO%
+      git clone --recursive --branch=%CIRRUS_BRANCH% https://x-access-token:%CIRRUS_REPO_CLONE_TOKEN%@github.com/%CIRRUS_REPO_FULL_NAME%.git %CIRRUS_WORKING_DIR% &
+      git reset --hard %CIRRUS_CHANGE_IN_REPO%
     ) ELSE (
-    git clone --recursive https://x-access-token:%CIRRUS_REPO_CLONE_TOKEN%@github.com/%CIRRUS_REPO_FULL_NAME%.git %CIRRUS_WORKING_DIR% &
-    git fetch origin pull/%CIRRUS_PR%/head:pull/%CIRRUS_PR% &
-    git reset --hard %CIRRUS_CHANGE_IN_REPO%
+      git clone --recursive https://x-access-token:%CIRRUS_REPO_CLONE_TOKEN%@github.com/%CIRRUS_REPO_FULL_NAME%.git %CIRRUS_WORKING_DIR% &
+      git fetch origin pull/%CIRRUS_PR%/head:pull/%CIRRUS_PR% &
+      git reset --hard %CIRRUS_CHANGE_IN_REPO%
     )
   windows_container:
     image: "python:3.8-windowsservercore"
@@ -151,9 +152,6 @@ windows_task:
     PIP_CONFIG_FILE: '%AppData%\pip\pip.ini'
     PRE_COMMIT_HOME: '%USERPROFILE%\.cache\pre-commit'
     COVERAGE: 'NO'
-    REQUESTS_CA_BUNDLE: ''
-    CURL_CA_BUNDLE: ''
-    # ^  deactivate SSL checking to avoid error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:661)
   pip_cache:
     folder: '%PIP_CACHE%'
   pre_commit_cache:

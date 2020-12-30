@@ -3,22 +3,8 @@ Contributors
 ============
 
 * Florian Wilhelm
-* Felix Wick
-* Holger Peters
-* Uwe Korn
-* Patrick Mühlbauer
-* Florian Rathgeber
-* Eva Schmücker
-* Tim Werner
-* Julian Gethmann
+* Thomas Aglassinger
 * Will Usher
+* Christoph Paulik
+* Johan Van de Wauw
 * Anderson Bravalheri
-* David Hilton
-* Pablo Aguiar
-* Vicky C Lau
-* Reuven Podmazo
-* Juan Leni
-* Anthony Sottile
-* Henning Häcker
-* Noah Pendleton
-* John Vandenberg

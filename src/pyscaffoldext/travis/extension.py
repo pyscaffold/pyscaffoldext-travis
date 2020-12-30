@@ -4,11 +4,11 @@ Extension that generates configuration and script files for Travis CI.
 
 from typing import List
 
-from .. import structure
-from ..actions import Action, ActionParams, ScaffoldOpts, Structure
-from ..operations import no_overwrite
-from ..templates import get_template
-from . import Extension
+from pyscaffold import structure
+from pyscaffold.actions import Action, ActionParams, ScaffoldOpts, Structure
+from pyscaffold.extensions import Extension
+from pyscaffold.operations import no_overwrite
+from pyscaffold.templates import get_template
 
 
 class Travis(Extension):

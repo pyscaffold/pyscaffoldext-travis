@@ -4,12 +4,13 @@ from pathlib import Path
 
 from pyscaffold.api import create_project
 from pyscaffold.cli import run
-from pyscaffold.extensions import travis
+
+from pyscaffoldext.travis.extension import Travis
 
 
 def test_create_project_with_travis(tmpfolder):
     # Given options with the travis extension,
-    opts = dict(project_path="proj", extensions=[travis.Travis("travis")])
+    opts = dict(project_path="proj", extensions=[Travis("travis")])
 
     # when the project is created,
     create_project(opts)
