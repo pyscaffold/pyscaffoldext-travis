@@ -2,6 +2,7 @@
 Extension that generates configuration and script files for Travis CI.
 """
 
+from functools import partial
 from typing import List
 
 from pyscaffold import structure
@@ -9,6 +10,10 @@ from pyscaffold.actions import Action, ActionParams, ScaffoldOpts, Structure
 from pyscaffold.extensions import Extension
 from pyscaffold.operations import no_overwrite
 from pyscaffold.templates import get_template
+
+from . import templates
+
+template = partial(get_template, relative_to=templates)
 
 
 class Travis(Extension):
@@ -30,10 +35,8 @@ def add_files(struct: Structure, opts: ScaffoldOpts) -> ActionParams:
         struct, opts: updated project representation and options
     """
     files: Structure = {
-        ".travis.yml": (get_template("travis"), no_overwrite()),
-        "tests": {
-            "travis_install.sh": (get_template("travis_install"), no_overwrite())
-        },
+        ".travis.yml": (template("travis"), no_overwrite()),
+        "tests": {"travis_install.sh": (template("travis_install"), no_overwrite())},
     }
 
     return structure.merge(struct, files), opts
