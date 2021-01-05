@@ -2,7 +2,7 @@
     Setup file for pyscaffoldext-travis.
     Use setup.cfg to configure your project.
 
-    This file was generated with PyScaffold 4.0b1.post45+g2ddaad1.
+    This file was generated with PyScaffold 4.0b3.
     PyScaffold helps you to put up the scaffold of your new Python project.
     Learn more under: https://pyscaffold.org/
 """
