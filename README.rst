@@ -1,10 +1,10 @@
-.. image:: https://api.cirrus-ci.com/github/pyscaffold/pyscaffoldext-travis.svg?branch=master
+.. image:: https://api.cirrus-ci.com/github/pyscaffold/pyscaffoldext-travis.svg?branch=main
     :alt: Built Status
     :target: https://cirrus-ci.com/github/pyscaffold/pyscaffoldext-travis
 .. image:: https://readthedocs.org/projects/pyscaffoldext-travis/badge/?version=latest
     :alt: ReadTheDocs
     :target: https://pyscaffoldext-travis.readthedocs.io/
-.. image:: https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-travis/master.svg
+.. image:: https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-travis/main.svg
     :alt: Coveralls
     :target: https://coveralls.io/r/pyscaffold/pyscaffoldext-travis
 .. image:: https://img.shields.io/pypi/v/pyscaffoldext-travis.svg
