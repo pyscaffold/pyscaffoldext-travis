@@ -10,6 +10,9 @@
 .. image:: https://img.shields.io/pypi/v/pyscaffoldext-travis.svg
     :alt: PyPI-Server
     :target: https://pypi.org/project/pyscaffoldext-travis/
+.. image:: https://pepy.tech/badge/pyscaffoldext-travis/month
+    :alt: Monthly Downloads
+    :target: https://pepy.tech/project/pyscaffoldext-travis
 
 ====================
 pyscaffoldext-travis
