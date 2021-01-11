@@ -41,14 +41,14 @@ This extension can be directly installed with ``pip``:
 
 .. code-block:: bash
 
-    $ pip install pyscaffoldext-travis
+    pip install pyscaffoldext-travis
 
 Or, if you prefer ``pipx``:
 
 .. code-block:: shell
 
-   $ pipx install pyscaffold  # if you haven't installed pyscaffold yet
-   $ pipx inject pyscaffold pyscaffoldext-travis
+    pipx install pyscaffold  # if you haven't installed pyscaffold yet
+    pipx inject pyscaffold pyscaffoldext-travis
 
 Note that, after the installation, ``putup -h`` will show a new option
 ``--travis``. Use this option to indicate when you are trying to create a
@@ -57,7 +57,7 @@ For example:
 
 .. code-block:: shell
 
-   $ putup --travis myapp
+    putup --travis myapp
 
 Please refer to `Travis' docs`_ to get started.
 
@@ -69,13 +69,13 @@ Making Changes & Contributing
 This project uses `pre-commit`_, please make sure to install it before making any
 changes::
 
-    $ pip install pre-commit
-    $ cd pyscaffoldext-travis
-    $ pre-commit install
+     pip install pre-commit
+     cd pyscaffoldext-travis
+     pre-commit install
 
 It is a good idea to update the hooks to the latest version::
 
-    pre-commit autoupdate
+     pre-commit autoupdate
 
 Please also check PyScaffold's `contribution guidelines`_,
 
