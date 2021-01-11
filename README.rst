@@ -28,14 +28,14 @@ a very popular and mature `continuous integration`_ solution that allows devs to
 test their code and perform a series of automated tasks, bringing confidence to
 their workflow.
 
-    **LOOKING FOR CONTRIBUTORS** - If you use PyScaffold or Travis and would
+    **LOOKING FOR CONTRIBUTORS** - If you use PyScaffold or Travis CI and would
     like to help us as a contributor (or even as one of the maintainers) for
     this extension, please send us an email or open an issue, we would love to
     have you on board.
 
 
-Usage
-=====
+Quickstart
+==========
 
 This extension can be directly installed with ``pip``:
 
@@ -51,7 +51,7 @@ Or, if you prefer ``pipx``:
     pipx inject pyscaffold pyscaffoldext-travis
 
 Note that, after the installation, ``putup -h`` will show a new option
-``--travis``. Use this option to indicate when you are trying to create a
+``--travis``. Use this option to indicate when you are want to create a
 package with automated tasks running on the `Travis CI`_ platgorm.
 For example:
 
@@ -77,7 +77,7 @@ It is a good idea to update the hooks to the latest version::
 
      pre-commit autoupdate
 
-Please also check PyScaffold's `contribution guidelines`_,
+Please also check PyScaffold's `contribution guidelines`_.
 
 Note
 ====
