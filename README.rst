@@ -3,7 +3,7 @@
     :target: https://cirrus-ci.com/github/pyscaffold/pyscaffoldext-travis
 .. image:: https://readthedocs.org/projects/pyscaffoldext-travis/badge/?version=latest
     :alt: ReadTheDocs
-    :target: https://pyscaffoldext-travis.readthedocs.io/
+    :target: https://pyscaffold.org/projects/travis
 .. image:: https://img.shields.io/coveralls/github/pyscaffold/pyscaffoldext-travis/main.svg
     :alt: Coveralls
     :target: https://coveralls.io/r/pyscaffold/pyscaffoldext-travis
@@ -88,7 +88,7 @@ information on PyScaffold see https://pyscaffold.org/.
 
 .. _PyScaffold: https://pyscaffold.org
 .. _Travis CI: https://travis-ci.com
-.. _pre-commit: http://pre-commit.com/
+.. _pre-commit: https://pre-commit.com/
 .. _continuous integration: https://en.wikipedia.org/wiki/Continuous_integration
 .. _Travis' docs: https://docs.travis-ci.com
 .. _contribution guidelines: https://pyscaffold.org/en/latest/contributing.html
