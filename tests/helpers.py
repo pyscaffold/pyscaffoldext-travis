@@ -97,6 +97,7 @@ def run_common_tasks(tests=True, docs=True, pre_commit=True, install=True):
 
     if pre_commit:
         try:
+            run(f"{PYTHON} -m pre_commit autoupdate")
             run(f"{PYTHON} -m pre_commit run --all-files")
         except CalledProcessError:
             print(run(get_executable("git"), "diff"))
